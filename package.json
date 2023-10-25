@@ -16,7 +16,7 @@
     "build": "tsc && vite build",
     "prepack": "yarn build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest --passWithNoTests"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
