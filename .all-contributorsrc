@@ -8,6 +8,15 @@
   "commitConvention": "angular",
   "contributors": [
     {
+      "login": "juancarlosfarah",
+      "name": "Juan Carlos Farah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1707188?v=4",
+      "profile": "https://juancarlosfarah.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "spaenleh",
       "name": "Basile Spaenlehauer",
       "avatar_url": "https://avatars.githubusercontent.com/u/39373170?v=4",
@@ -16,10 +25,11 @@
         "code"
       ]
     },
-      "login": "juancarlosfarah",
-      "name": "Juan Carlos Farah",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1707188?v=4",
-      "profile": "https://juancarlosfarah.com",
+    {
+      "login": "RoxaneBurri",
+      "name": "RoxaneBurri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43374563?v=4",
+      "profile": "https://github.com/RoxaneBurri",
       "contributions": [
         "code"
       ]
