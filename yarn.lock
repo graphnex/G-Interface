@@ -657,6 +657,7 @@ __metadata:
     "@types/cytoscape-avsdf": ^1.0.2
     "@types/file-saver": ^2.0.6
     "@types/lodash": ^4.14.198
+    "@types/pluralize": ^0.0.32
     "@types/randomcolor": ^0.5.7
     "@types/react": ^18.2.12
     "@types/react-cytoscapejs": ^1.2.2
@@ -672,8 +673,10 @@ __metadata:
     cytoscape-fcose: ^2.2.0
     file-saver: ^2.0.5
     lodash: ^4.17.21
+    pluralize: ^8.0.0
     postcss: ^8.4.24
     prettier: ^3.0.3
+    pretty-print-json: ^2.0.4
     randomcolor: ^0.6.2
     react: ^18.2.0
     react-cytoscapejs: ^2.0.0
@@ -1247,6 +1250,13 @@ __metadata:
   version: 4.0.1
   resolution: "@types/parse-json@npm:4.0.1"
   checksum: 467c5fb95f4b03ea10fac007b4de7c9db103e8fce87b039ba5b37f17b374911833724624c311f3591435e4c42e376cab219400af1aef1dc314d5bd495d22fde7
+  languageName: node
+  linkType: hard
+
+"@types/pluralize@npm:^0.0.32":
+  version: 0.0.32
+  resolution: "@types/pluralize@npm:0.0.32"
+  checksum: 788aa2ad144a0e7b318d03bddfeefecd65e97793e0faad748c458538abd8d680bcc096fe1219567a7c19d41d23b74e45868d7d43a06a44135798eb8da09a1655
   languageName: node
   linkType: hard
 
@@ -3388,6 +3398,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pluralize@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "pluralize@npm:8.0.0"
+  checksum: 08931d4a6a4a5561a7f94f67a31c17e6632cb21e459ab3ff4f6f629d9a822984cf8afef2311d2005fbea5d7ef26016ebb090db008e2d8bce39d0a9a9d218736e
+  languageName: node
+  linkType: hard
+
 "postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
@@ -3423,6 +3440,13 @@ __metadata:
     ansi-styles: ^5.0.0
     react-is: ^18.0.0
   checksum: 032c1602383e71e9c0c02a01bbd25d6759d60e9c7cf21937dde8357aa753da348fcec5def5d1002c9678a8524d5fe099ad98861286550ef44de8808cc61e43b6
+  languageName: node
+  linkType: hard
+
+"pretty-print-json@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "pretty-print-json@npm:2.0.4"
+  checksum: 2db806b31c37c31de7523dbb9b1c8a54c7dd8226da6a59221f17b05d4c1f03cfc9fb968eea3495de762302c2b457bc35f68bb160c47d3aa00581bc72168a9cfc
   languageName: node
   linkType: hard
 

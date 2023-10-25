@@ -16,7 +16,11 @@ import {
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import Cytoscape, { Core, NodeSingular } from 'cytoscape';
+import Cytoscape, {
+  CollectionReturnValue,
+  Core,
+  NodeSingular,
+} from 'cytoscape';
 import avsdf from 'cytoscape-avsdf';
 // @ts-ignore
 import cise from 'cytoscape-cise';
@@ -27,6 +31,7 @@ import fcose from 'cytoscape-fcose';
 import _ from 'lodash';
 import randomColor from 'randomcolor';
 
+import Detail from './Detail';
 import Export from './Export';
 import Filter from './Filter';
 import Layout from './Layout';
@@ -101,6 +106,9 @@ const View = ({ graph }: Props) => {
   const [maxWeight, setMaxWeight] = useState<number>(Math.max(...weights));
   const [filters, setFilters] = useState<Set<string>>(new Set());
   const [matchFullWord, setMatchFullWord] = useState<boolean>(false);
+  const [selected, setSelected] = useState<CollectionReturnValue>(
+    [] as unknown as CollectionReturnValue,
+  );
 
   const stylesheet = [
     {
@@ -398,6 +406,24 @@ const View = ({ graph }: Props) => {
     }
   }, [cyHandle]);
 
+  // keydown listener for deleting elements
+  useEffect(() => {
+    try {
+      if (cyHandle) {
+        const updateSelection = () => {
+          const elems: CollectionReturnValue = cyHandle.filter(':selected');
+          setSelected(elems);
+        };
+
+        cyHandle.on('select', '*', updateSelection);
+        cyHandle.on('unselect', '*', updateSelection);
+        cyHandle.on('remove', '*', updateSelection);
+      }
+    } catch (e) {
+      console.warn(`caught error: ${e}`);
+    }
+  }, [cyHandle]);
+
   return (
     <>
       <Box sx={{ my: 1, marginX: 5 }}>
@@ -482,6 +508,7 @@ const View = ({ graph }: Props) => {
                   settings={settings}
                   filters={filters}
                   matchFullWord={matchFullWord}
+                  selected={selected}
                 />
               </Grid>
             </Grid>
@@ -506,6 +533,7 @@ const View = ({ graph }: Props) => {
           }}
         />
       </div>
+      <Detail elements={selected} />
     </>
   );
 };

@@ -6,7 +6,7 @@ import FormatSizeIcon from '@mui/icons-material/FormatSize';
 import { Box, Slider, Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
-import Cytoscape from 'cytoscape';
+import Cytoscape, { CollectionReturnValue } from 'cytoscape';
 
 import {
   SHOW_EDGES_KEY,
@@ -24,6 +24,7 @@ type Props = {
   settings: SettingsProps;
   filters: Set<string>;
   matchFullWord: boolean;
+  selected: CollectionReturnValue;
 };
 
 export default function Sizer({
@@ -35,6 +36,7 @@ export default function Sizer({
   settings,
   filters,
   matchFullWord,
+  selected,
 }: Props) {
   const [nodeSize, setNodeSize] = useState<number>(1);
   const [edgeSize, setEdgeSize] = useState<number>(1);
@@ -129,7 +131,16 @@ export default function Sizer({
         console.warn(`caught error: ${e}`);
       }
     }
-  }, [fontSize, nodeSize, edgeSize, cy, settings, filters, matchFullWord]);
+  }, [
+    fontSize,
+    nodeSize,
+    edgeSize,
+    cy,
+    settings,
+    filters,
+    matchFullWord,
+    selected,
+  ]);
 
   const edgesDisabled = (n: number) => !settings[SHOW_EDGES_KEY] || n === 0;
   const nodesDisabled = !settings[SHOW_NODES_KEY] || settings[SHOW_LABELS_KEY];
