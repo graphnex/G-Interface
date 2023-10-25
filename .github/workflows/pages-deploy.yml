@@ -30,7 +30,7 @@ jobs:
         shell: bash
 
       - name: Build Demo App
-        run: yarn build:app
+        run: yarn build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
