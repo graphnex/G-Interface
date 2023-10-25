@@ -1,11 +1,16 @@
 {
-  "name": "@x-image-privacy/wordcloud",
+  "name": "@graphnex/g-interface",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "contributors": [
+    "Basile Spaenlehauer",
+    "Roxane Burri",
+    "Juan Carlos Farah"
+  ],
   "scripts": {
     "dev": "vite",
     "build:app": "tsc && vite build",

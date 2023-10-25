@@ -1,14 +1,6 @@
-# Word-cloud
+# G-Interface
 
-[Live demo here](https://x-image-privacy.github.io/word-cloud/)
-
-This repository creates a word cloud from a list of words.
-
-![WordCloud Demo](docs/word-cloud_v2.png)
-
-# Documentation
-
-You can find the documentation about the word cloud in [this file](technical_descriptions.md)
+This repository provides an interface for interacting with graphs for explainability purposes.
 
 # Installation
 
@@ -24,7 +16,7 @@ You can install the project dependencies using:
 yarn
 ```
 
-You should now be ready to start developing the app
+You should now be ready to start developing the app.
 
 ## Usage
 
@@ -32,10 +24,4 @@ To start the app:
 
 ```bash
 yarn dev
-```
-
-To run all automated tests:
-
-```bash
-yarn test
 ```
