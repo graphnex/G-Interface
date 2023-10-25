@@ -13,8 +13,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build:app": "tsc && vite build",
-    "build": "tsc && vite build --config vite-lib.config.ts",
+    "build": "tsc && vite build",
     "prepack": "yarn build",
     "preview": "vite preview",
     "test": "vitest"
