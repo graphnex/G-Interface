@@ -810,6 +810,50 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphnex/g-interface@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@graphnex/g-interface@workspace:."
+  dependencies:
+    "@emotion/react": ^11.11.1
+    "@emotion/styled": ^11.11.0
+    "@fontsource/roboto": ^5.0.8
+    "@mui/icons-material": ^5.14.12
+    "@mui/material": ^5.14.12
+    "@trivago/prettier-plugin-sort-imports": ^4.2.0
+    "@types/cytoscape-avsdf": ^1.0.2
+    "@types/file-saver": ^2.0.6
+    "@types/lodash": ^4.14.198
+    "@types/randomcolor": ^0.5.7
+    "@types/react": ^18.2.12
+    "@types/react-cytoscapejs": ^1.2.2
+    "@types/react-dom": ^18.2.5
+    "@vitejs/plugin-react": ^4.0.0
+    autoprefixer: ^10.4.14
+    cytoscape: ^3.26.0
+    cytoscape-avsdf: ^1.0.0
+    cytoscape-cise: ^1.0.0
+    cytoscape-cola: ^2.5.1
+    cytoscape-compound-drag-and-drop: ^1.1.0
+    cytoscape-edgehandles: ^4.0.1
+    cytoscape-fcose: ^2.2.0
+    file-saver: ^2.0.5
+    lodash: ^4.17.21
+    postcss: ^8.4.24
+    prettier: ^3.0.3
+    randomcolor: ^0.6.2
+    react: ^18.2.0
+    react-cytoscapejs: ^2.0.0
+    react-dom: ^18.2.0
+    react-hot-toast: ^2.4.1
+    rgb-hex: ^4.1.0
+    typescript: ^5.1.3
+    vite: ^4.3.9
+    vite-plugin-checker: ^0.6.0
+    vite-plugin-dts: ^2.3.0
+    vitest: ^0.32.0
+  languageName: unknown
+  linkType: soft
+
 "@jridgewell/gen-mapping@npm:^0.3.0, @jridgewell/gen-mapping@npm:^0.3.2":
   version: 0.3.3
   resolution: "@jridgewell/gen-mapping@npm:0.3.3"
@@ -1455,50 +1499,6 @@ __metadata:
   checksum: f27df1e7066a310cd43a7261f2b1f668e32b7443f9b90af4a6e49575ee2d65b019192833ddbd0f51eb5690130b5b1bd2459cb83397860941308eeb122983427a
   languageName: node
   linkType: hard
-
-"@x-image-privacy/wordcloud@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@x-image-privacy/wordcloud@workspace:."
-  dependencies:
-    "@emotion/react": ^11.11.1
-    "@emotion/styled": ^11.11.0
-    "@fontsource/roboto": ^5.0.8
-    "@mui/icons-material": ^5.14.12
-    "@mui/material": ^5.14.12
-    "@trivago/prettier-plugin-sort-imports": ^4.2.0
-    "@types/cytoscape-avsdf": ^1.0.2
-    "@types/file-saver": ^2.0.6
-    "@types/lodash": ^4.14.198
-    "@types/randomcolor": ^0.5.7
-    "@types/react": ^18.2.12
-    "@types/react-cytoscapejs": ^1.2.2
-    "@types/react-dom": ^18.2.5
-    "@vitejs/plugin-react": ^4.0.0
-    autoprefixer: ^10.4.14
-    cytoscape: ^3.26.0
-    cytoscape-avsdf: ^1.0.0
-    cytoscape-cise: ^1.0.0
-    cytoscape-cola: ^2.5.1
-    cytoscape-compound-drag-and-drop: ^1.1.0
-    cytoscape-edgehandles: ^4.0.1
-    cytoscape-fcose: ^2.2.0
-    file-saver: ^2.0.5
-    lodash: ^4.17.21
-    postcss: ^8.4.24
-    prettier: ^3.0.3
-    randomcolor: ^0.6.2
-    react: ^18.2.0
-    react-cytoscapejs: ^2.0.0
-    react-dom: ^18.2.0
-    react-hot-toast: ^2.4.1
-    rgb-hex: ^4.1.0
-    typescript: ^5.1.3
-    vite: ^4.3.9
-    vite-plugin-checker: ^0.6.0
-    vite-plugin-dts: ^2.3.0
-    vitest: ^0.32.0
-  languageName: unknown
-  linkType: soft
 
 "abbrev@npm:^1.0.0":
   version: 1.1.1
