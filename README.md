@@ -39,6 +39,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://juancarlosfarah.com"><img src="https://avatars.githubusercontent.com/u/1707188?v=4?s=100" width="100px;" alt="Juan Carlos Farah"/><br /><sub><b>Juan Carlos Farah</b></sub></a><br /><a href="https://github.com/graphnex/g-interface/commits?author=juancarlosfarah" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/spaenleh"><img src="https://avatars.githubusercontent.com/u/39373170?v=4?s=100" width="100px;" alt="Basile Spaenlehauer"/><br /><sub><b>Basile Spaenlehauer</b></sub></a><br /><a href="https://github.com/graphnex/g-interface/commits?author=spaenleh" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/RoxaneBurri"><img src="https://avatars.githubusercontent.com/u/43374563?v=4?s=100" width="100px;" alt="RoxaneBurri"/><br /><sub><b>RoxaneBurri</b></sub></a><br /><a href="https://github.com/graphnex/g-interface/commits?author=RoxaneBurri" title="Code">💻</a></td>
     </tr>
   </tbody>
