@@ -380,7 +380,7 @@ const View = ({ graph }: Props) => {
     return () => {
       // anything in here is fired on component unmount.
     };
-  }, [settings, cyHandle, filters, matchFullWord]);
+  }, [settings, cyHandle, filters, matchFullWord, selected]);
 
   // keydown listener for deleting elements
   useEffect(() => {
