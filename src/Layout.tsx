@@ -26,7 +26,7 @@ export default function Layout({ cy }: Props) {
   };
 
   const handleFit = () => {
-    if (cy) {
+    if (cy && layout) {
       const visibleNodes = cy.nodes(':visible');
 
       const l = visibleNodes.layout({
@@ -37,10 +37,12 @@ export default function Layout({ cy }: Props) {
   };
   const handleLayout = (event: SelectChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    setLayout(String(value));
+    if (value) {
+      setLayout(String(value));
+    }
   };
 
-  const [layout, setLayout] = React.useState<string>(DEFAULT_LAYOUT);
+  const [layout, setLayout] = React.useState<string | undefined>();
 
   return (
     <>
@@ -68,7 +70,7 @@ export default function Layout({ cy }: Props) {
           <Button variant="outlined" onClick={handleCenter}>
             Center
           </Button>
-          <Button variant="outlined" onClick={handleFit}>
+          <Button variant="outlined" onClick={handleFit} disabled={!layout}>
             Fit
           </Button>
         </ButtonGroup>

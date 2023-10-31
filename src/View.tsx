@@ -524,9 +524,6 @@ const View = ({ graph }: Props) => {
             width: 'calc(100vw)',
             height: 'calc(100vh - 400px)',
           }}
-          layout={{
-            name: DEFAULT_LAYOUT,
-          }}
           cy={(cy) => {
             // todo: enable reshuffling
             setCyHandle(cy);
