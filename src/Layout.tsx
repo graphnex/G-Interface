@@ -12,8 +12,6 @@ import Button from '@mui/material/Button';
 
 import Cytoscape from 'cytoscape';
 
-import { DEFAULT_LAYOUT } from './constants';
-
 type Props = {
   cy: Cytoscape.Core | undefined;
 };
@@ -42,7 +40,7 @@ export default function Layout({ cy }: Props) {
     }
   };
 
-  const [layout, setLayout] = React.useState<string | undefined>();
+  const [layout, setLayout] = React.useState<string | null>(null);
 
   return (
     <>

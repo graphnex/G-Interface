@@ -672,6 +672,7 @@ __metadata:
     cytoscape-edgehandles: ^4.0.1
     cytoscape-fcose: ^2.2.0
     file-saver: ^2.0.5
+    invert-color: ^2.0.0
     lodash: ^4.17.21
     pluralize: ^8.0.0
     postcss: ^8.4.24
@@ -2643,6 +2644,13 @@ __metadata:
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
+  languageName: node
+  linkType: hard
+
+"invert-color@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "invert-color@npm:2.0.0"
+  checksum: 96ce4eddef748077167c3b7db89954824f80d82ddf90b01e56d44ec1f83c70b4857fbf149b8439498c0e0bca12f56b43c1b61a48d52b6e9f7d6aeb97632e2235
   languageName: node
   linkType: hard
 

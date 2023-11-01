@@ -28,6 +28,7 @@ import cise from 'cytoscape-cise';
 import cola from 'cytoscape-cola';
 // @ts-ignore
 import fcose from 'cytoscape-fcose';
+import invert from 'invert-color';
 import _ from 'lodash';
 import randomColor from 'randomcolor';
 
@@ -36,7 +37,6 @@ import Export from './Export';
 import Filter from './Filter';
 import Layout from './Layout';
 import Sizer from './Sizer';
-import { DEFAULT_LAYOUT } from './constants';
 import { GraphData } from './data/types';
 
 Cytoscape.use(fcose);
@@ -46,9 +46,12 @@ Cytoscape.use(cise);
 
 // todo: figure out how to uncache for nodes that change color
 const selectColor = _.memoize(function (ele: NodeSingular) {
+  // parents/categories should not have scores
   if (ele.isParent()) {
     return ele.data('color');
   }
+
+  const score = ele.data('score');
 
   if (ele.isChild()) {
     const color = randomColor({
@@ -56,16 +59,40 @@ const selectColor = _.memoize(function (ele: NodeSingular) {
       hue: ele.parent().data()['color'],
     });
 
+    // positive scores return same color
+    // negative scores return inverted color
+    if (score) {
+      if (score > 0) {
+        return color;
+      } else {
+        return invert(color);
+      }
+    }
+
     return color;
   }
 
-  // orphan
+  // orphan: respect color if already present
   if (ele.data('color')) {
     return ele.data('color');
   }
 
-  return 'gray';
+  // if color not present, but has score
+  // return black if positive or inverse gray if negative
+  const black = '#1f1f1f';
+  if (score) {
+    if (score > 0) {
+      return black;
+    } else {
+      return invert(black);
+    }
+  }
+
+  // fall back on black
+  return black;
 });
+
+const selectTextColor = (ele: NodeSingular) => invert(selectColor(ele));
 
 export const SHOW_NODES_KEY = 'showNodes';
 export const SHOW_PARENT_NODES_KEY = 'showParentNodes';
@@ -91,8 +118,8 @@ const View = ({ graph }: Props) => {
     [SHOW_LABELS_KEY]: true,
   });
 
-  const scores = graph.nodes.map((node) => node.data.score);
-  const weights = graph.edges.map((edge) => edge.data.weight);
+  const scores = graph.nodes.map((node) => Math.abs(node.data.score));
+  const weights = graph.edges.map((edge) => Math.abs(edge.data.weight));
 
   const elements = CytoscapeComponent.normalizeElements({
     nodes: [..._.cloneDeep(graph.nodes), ..._.cloneDeep(graph.parentNodes)],
@@ -117,7 +144,7 @@ const View = ({ graph }: Props) => {
         label: 'data(name)',
         backgroundOpacity: 0,
         backgroundColor: selectColor,
-        color: 'white',
+        color: selectTextColor,
         textHalign: 'center',
         textValign: 'center',
         textOutlineColor: selectColor,
@@ -329,8 +356,8 @@ const View = ({ graph }: Props) => {
             .update();
         }
 
-        // update colors
-        cyHandle.nodes().forEach((ele) => {
+        // update colors for nodes that are not selected
+        cyHandle.nodes(':unselected').forEach((ele) => {
           const color = ele.style('background-color');
           if (color) {
             ele.data({ color: rgbToHex(color) });

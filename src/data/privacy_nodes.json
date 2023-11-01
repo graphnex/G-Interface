@@ -3,16 +3,14 @@
     "data": {
       "id": "0",
       "name": "private",
-      "score": 0.3997,
-      "color": "#a8030b"
+      "score": -1
     }
   },
   {
     "data": {
       "id": "1",
       "name": "public",
-      "score": 0.0925,
-      "color": "#aa0dbf"
+      "score": 1
     }
   },
   {
@@ -46,7 +44,7 @@
     "data": {
       "id": "5",
       "name": "motorbike",
-      "score": 0.8976,
+      "score": -0.8976,
       "parent": "c1",
       "color": "#f9ea18"
     }
@@ -73,7 +71,7 @@
     "data": {
       "id": "8",
       "name": "train",
-      "score": 0.285,
+      "score": -0.285,
       "parent": "c1",
       "color": "#8c0414"
     }
@@ -100,7 +98,7 @@
     "data": {
       "id": "11",
       "name": "traffic light",
-      "score": 0.251,
+      "score": -0.251,
       "parent": "c7",
       "color": "#a81906"
     }
@@ -145,7 +143,7 @@
     "data": {
       "id": "16",
       "name": "bird",
-      "score": 0.6427,
+      "score": -0.6427,
       "parent": "c10",
       "color": "#870d02"
     }
@@ -190,7 +188,7 @@
     "data": {
       "id": "21",
       "name": "cow",
-      "score": 0.4187,
+      "score": -0.4187,
       "parent": "c10",
       "color": "#a51609"
     }
@@ -235,7 +233,7 @@
     "data": {
       "id": "26",
       "name": "backpack",
-      "score": 0.2111,
+      "score": -0.2111,
       "parent": "c3",
       "color": "#c40b64"
     }
@@ -280,7 +278,7 @@
     "data": {
       "id": "31",
       "name": "frisbee",
-      "score": 0.2431,
+      "score": -0.2431,
       "parent": "c4",
       "color": "#580b84"
     }
@@ -325,7 +323,7 @@
     "data": {
       "id": "36",
       "name": "baseball bat",
-      "score": 0.2863,
+      "score": -0.2863,
       "parent": "c4",
       "color": "#9b2909"
     }
@@ -361,7 +359,7 @@
     "data": {
       "id": "40",
       "name": "tennis racket",
-      "score": 0.4433,
+      "score": -0.4433,
       "parent": "c4",
       "color": "#3e057f"
     }
@@ -406,7 +404,7 @@
     "data": {
       "id": "45",
       "name": "knife",
-      "score": 0.3125,
+      "score": -0.3125,
       "parent": "c0",
       "color": "#46990f"
     }
@@ -460,7 +458,7 @@
     "data": {
       "id": "51",
       "name": "orange",
-      "score": 0.1126,
+      "score": -0.1126,
       "parent": "c2",
       "color": "#d804bc"
     }
@@ -559,7 +557,7 @@
     "data": {
       "id": "62",
       "name": "diningtable",
-      "score": 0.6762,
+      "score": -0.6762,
       "parent": "c9",
       "color": "#064c6b"
     }

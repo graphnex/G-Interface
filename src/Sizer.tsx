@@ -6,7 +6,12 @@ import FormatSizeIcon from '@mui/icons-material/FormatSize';
 import { Box, Slider, Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
-import Cytoscape, { CollectionReturnValue } from 'cytoscape';
+import Cytoscape, {
+  CollectionReturnValue,
+  EdgeSingular,
+  NodeSingular,
+} from 'cytoscape';
+import _ from 'lodash';
 
 import {
   SHOW_EDGES_KEY,
@@ -25,6 +30,16 @@ type Props = {
   filters: Set<string>;
   matchFullWord: boolean;
   selected: CollectionReturnValue;
+};
+
+const mapRange = (
+  value: number,
+  inMin: number,
+  inMax: number,
+  outMin: number,
+  outMax: number,
+): number => {
+  return outMin + ((outMax - outMin) * (value - inMin)) / (outMin - inMin);
 };
 
 export default function Sizer({
@@ -67,6 +82,60 @@ export default function Sizer({
     setEdgeSize(newEdgeSize);
   };
 
+  // todo: figure out how to uncache for resizing
+  const selectNodeSize = _.memoize(function (ele: NodeSingular) {
+    const score = ele.data('score');
+    const minIn = minScore || 0;
+    const maxIn = maxScore || 1;
+    const MIN_NODE_SIZE_FACTOR = 10;
+    const MAX_NODE_SIZE_FACTOR = 100;
+    const minOut = MIN_NODE_SIZE_FACTOR * nodeSize;
+    const maxOut = MAX_NODE_SIZE_FACTOR * nodeSize;
+
+    if (!score) {
+      return minIn;
+    }
+
+    const absoluteScore = Math.abs(score);
+    return mapRange(absoluteScore, minIn, maxIn, minOut, maxOut);
+  });
+
+  // todo: figure out how to uncache for resizing
+  const selectFontSize = _.memoize(function (ele: NodeSingular) {
+    const score = ele.data('score');
+    const minIn = minScore || 0;
+    const maxIn = maxScore || 1;
+    const MIN_FONT_SIZE_FACTOR = 1;
+    const MAX_FONT_SIZE_FACTOR = 20;
+    const minOut = MIN_FONT_SIZE_FACTOR * fontSize;
+    const maxOut = MAX_FONT_SIZE_FACTOR * fontSize;
+
+    if (!score) {
+      return minIn;
+    }
+
+    const absoluteScore = Math.abs(score);
+    return mapRange(absoluteScore, minIn, maxIn, minOut, maxOut);
+  });
+
+  // todo: figure out how to uncache for resizing
+  const selectEdgeSize = _.memoize(function (ele: EdgeSingular) {
+    const score = ele.data('weight');
+    const minIn = minWeight || 0;
+    const maxIn = maxWeight || 1;
+    const MIN_EDGE_SIZE_FACTOR = 1;
+    const MAX_EDGE_SIZE_FACTOR = 10;
+    const minOut = MIN_EDGE_SIZE_FACTOR * edgeSize;
+    const maxOut = MAX_EDGE_SIZE_FACTOR * edgeSize;
+
+    if (!score) {
+      return minIn;
+    }
+
+    const absoluteScore = Math.abs(score);
+    return mapRange(absoluteScore, minIn, maxIn, minOut, maxOut);
+  });
+
   useEffect(() => {
     if (cy) {
       try {
@@ -76,12 +145,8 @@ export default function Sizer({
           .style(
             // assuming absolute minScore of 0 and maxScore of 1
             {
-              width: `mapData(score, ${minScore || 0}, ${maxScore || 1}, ${
-                10 * nodeSize
-              }, ${100 * nodeSize})`,
-              height: `mapData(score, ${minScore || 0}, ${maxScore || 1}, ${
-                10 * nodeSize
-              }, ${100 * nodeSize})`,
+              width: selectNodeSize,
+              height: selectNodeSize,
             },
           )
           .update();
@@ -92,9 +157,7 @@ export default function Sizer({
           .style(
             // assuming absolute minScore of 0 and maxScore of 1
             {
-              'font-size': `mapData(score, ${minScore || 0}, ${
-                maxScore || 1
-              }, ${1 * fontSize}, ${20 * fontSize})`,
+              'font-size': selectFontSize,
               'text-outline-width': 2 * fontSize,
             },
           )
@@ -121,9 +184,7 @@ export default function Sizer({
             // assuming absolute minScore of 0 and maxScore of 1
             {
               // assuming absolute minWeight of 0 and maxWeight of 1
-              width: `mapData(weight, ${minWeight || 0}, ${maxWeight || 1}, ${
-                1 * edgeSize
-              }, ${10 * edgeSize})`,
+              width: selectEdgeSize,
             },
           )
           .update();
