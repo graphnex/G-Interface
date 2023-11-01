@@ -33,6 +33,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "kerolex",
+      "name": "Alessio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7253675?v=4",
+      "profile": "http://www.eecs.qmul.ac.uk/~ax300",
+      "contributions": [
+        "bug",
+        "userTesting",
+        "projectManagement"
+      ]
     }
   ],
   "contributorsPerLine": 7,
