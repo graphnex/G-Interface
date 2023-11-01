@@ -1,6 +1,6 @@
 # G-Interface
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository provides an interface for interacting with graphs for explainability purposes.
@@ -42,6 +42,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://juancarlosfarah.com"><img src="https://avatars.githubusercontent.com/u/1707188?v=4?s=100" width="100px;" alt="Juan Carlos Farah"/><br /><sub><b>Juan Carlos Farah</b></sub></a><br /><a href="https://github.com/graphnex/g-interface/commits?author=juancarlosfarah" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/spaenleh"><img src="https://avatars.githubusercontent.com/u/39373170?v=4?s=100" width="100px;" alt="Basile Spaenlehauer"/><br /><sub><b>Basile Spaenlehauer</b></sub></a><br /><a href="https://github.com/graphnex/g-interface/commits?author=spaenleh" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/RoxaneBurri"><img src="https://avatars.githubusercontent.com/u/43374563?v=4?s=100" width="100px;" alt="RoxaneBurri"/><br /><sub><b>RoxaneBurri</b></sub></a><br /><a href="https://github.com/graphnex/g-interface/commits?author=RoxaneBurri" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.eecs.qmul.ac.uk/~ax300"><img src="https://avatars.githubusercontent.com/u/7253675?v=4?s=100" width="100px;" alt="Alessio"/><br /><sub><b>Alessio</b></sub></a><br /><a href="https://github.com/graphnex/g-interface/issues?q=author%3Akerolex" title="Bug reports">🐛</a> <a href="#userTesting-kerolex" title="User Testing">📓</a> <a href="#projectManagement-kerolex" title="Project Management">📆</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/mbonto"><img src="https://avatars.githubusercontent.com/u/45796859?v=4?s=100" width="100px;" alt="mbonto"/><br /><sub><b>mbonto</b></sub></a><br /><a href="https://github.com/graphnex/g-interface/issues?q=author%3Ambonto" title="Bug reports">🐛</a> <a href="#userTesting-mbonto" title="User Testing">📓</a></td>
     </tr>
   </tbody>
